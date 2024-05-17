@@ -1,5 +1,5 @@
 # MacroDeck.EliteDangerousPlugin
-A simple plugin for [https://macrodeck.org](|MacroDeck) that pulls information from the game Elite Dangerous as MacroDeck variables. These variables can then be used for example to switch the button state of MacroDeck buttons or vary the key presses send to the game accoring to some conditions.
+A simple plugin for [https://macrodeck.org](|MacroDeck) that pulls information from the game Elite Dangerous as MacroDeck variables. These variables can then be used for example to switch the button state of MacroDeck buttons or vary the key presses send to the game according to some conditions.
 
 ## How it works
 The plugin watches for changes to the [https://elite-journal.readthedocs.io/en/latest/Status%20File/](Journal File) located in `%UserProfile%\Saved Games\Frontier Developments\Elite Dangerous\status.json` and updates the MacroDeck variables accordingly.
@@ -42,3 +42,8 @@ The following variables are currently provided:
 | `elite_focus_dss`             | Bool | True if Detailed Surface Scanner (DSS) UI is selected |
 | `elite_focus_codex`           | Bool | True if codex UI is selected |
 | `elite_fire_group`            | Int  | 0-based index of the selected fire group |
+
+## Known Issues
+The Night Vision status is not updated in the Journal Status file while docked at a station, hence the `elite_night_vision_enabled` variable will be out-of-sync with the in-game UI while docked.
+
+The update of the MacroDeck variables is not atomic, hence there can be some light flicker when the variables are updated form the Journal Status file. 
