@@ -1,0 +1,10 @@
+{
+    "type" : "Plugin",
+    "name" : "Elite Dangerous",
+    "author" : "Lochkartenman",
+    "repository" : "",
+    "packageId" : "Lochkartenman.EliteDangerous",
+    "version" : "1.0.0",
+    "target-plugin-api-version" : 40,
+    "dll" : "EliteDangerousPlugin.dll"
+}

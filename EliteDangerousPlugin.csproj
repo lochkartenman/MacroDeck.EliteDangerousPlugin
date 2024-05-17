@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <!--TargetFramework>netcoreapp3.1</TargetFramework-->
+    <RootNamespace>Lochkartenman.EliteDangerous</RootNamespace>
+    <UseWindowsForms>true</UseWindowsForms>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <Authors>Arne Krueger</Authors>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+    <Version>1.0.0</Version>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <Platforms>AnyCPU;x64</Platforms>
+    <OutputType>Library</OutputType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="Macro Deck 2">
+      <HintPath>C:\Users\Arne\AppData\Local\Programs\Macro Deck\Macro Deck 2.dll</HintPath>
+      <Private>false</Private>
+      <EmbedInteropTypes>false</EmbedInteropTypes>
+    </Reference>
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="copy /Y &quot;$(TargetDir)$(TargetName).dll&quot; &quot;%APPDATA%\Macro Deck\plugins\Lochkartenman.EliteDangerous\$(TargetName).dll&quot;" />
+    <Exec Command="copy /Y &quot;ExtensionManifest.json&quot; &quot;%APPDATA%\Macro Deck\plugins\Lochkartenman.EliteDangerous\ExtensionManifest.json&quot;" />
+    <Exec Command="copy /Y &quot;ExtensionIcon.png&quot; &quot;%APPDATA%\Macro Deck\plugins\Lochkartenman.EliteDangerous\ExtensionIcon.png&quot;" />
+  </Target>
+</Project>
