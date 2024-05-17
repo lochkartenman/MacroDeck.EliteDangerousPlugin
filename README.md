@@ -1,8 +1,18 @@
 # MacroDeck.EliteDangerousPlugin
-A simple plugin for [https://macrodeck.org](|MacroDeck) that pulls information from the game Elite Dangerous as MacroDeck variables. These variables can then be used for example to switch the button state of MacroDeck buttons or vary the key presses send to the game according to some conditions.
+A simple plugin for [MacroDeck](https://macrodeck.org) that pulls information from the game Elite Dangerous as MacroDeck variables. 
+
+![Screenshot of MacroDeck variables view](./assets/variables.png)
+
+These variables can then be used for example to switch the button state of MacroDeck buttons or vary the key presses send to the game according to some conditions.
+
+![Screenshot of button configuration window with conditional text](./assets/edit-button.png)
+
+My MacroDeck for Elite Dangerous looks like this:
+
+![Screenshot of my Elite Dangerous MacroDeck](./assets/example-deck.png)
 
 ## How it works
-The plugin watches for changes to the [https://elite-journal.readthedocs.io/en/latest/Status%20File/](Journal File) located in `%UserProfile%\Saved Games\Frontier Developments\Elite Dangerous\status.json` and updates the MacroDeck variables accordingly.
+The plugin watches for changes to the [Journal File](https://elite-journal.readthedocs.io/en/latest/Status%20File/) located in `%UserProfile%\Saved Games\Frontier Developments\Elite Dangerous\status.json` and updates the MacroDeck variables accordingly.
 
 The following variables are currently provided:
 | Variable                      | Type | Meaning |
